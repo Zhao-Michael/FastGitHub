@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
@@ -94,7 +95,7 @@ namespace FastGithub
         /// <returns></returns>
         public static ProductionVersion Parse(string productionVersion)
         {
-            const string VERSION = @"^\d+\.(\d+.){0,2}\d+";
+            const string VERSION = @"^\d+\.(\d+\.){0,2}\d+(?=\+[0-9a-f].)?";
             var verion = Regex.Match(productionVersion, VERSION).Value;
             var subVersion = productionVersion[verion.Length..];
             return new ProductionVersion(Version.Parse(verion), subVersion);
