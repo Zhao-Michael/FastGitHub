@@ -94,7 +94,7 @@ namespace FastGithub.HttpServer.Certs
                 this.logger.LogWarning($"请根据你的系统平台手动安装和信任CA证书{this.CaCerFilePath}");
             }
 
-            GitConfigSSLChannel("schannel");
+            // GitConfigSSLChannel("schannel");
         }
 
         /// <summary>
